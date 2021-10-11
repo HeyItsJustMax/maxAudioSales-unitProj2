@@ -177,6 +177,22 @@ app.get("/gear", (req, res) => {
     })
 })
 
+// NEW ROUTE (GET => /gear/new)
+app.get("/gear/new", (req, res) => {
+    res.render("gear/new.ejs")
+})
+
+// CREATE ROUTE (POST => /fruits)
+app.post("/gear", (req, res) => {
+    // check if the 
+
+    // create the new gear listing
+    Gear.create(req.body, (err, gear) => {
+        // redirect the user back to the main fruits page after the listing is created
+        res.redirect("/gear")
+    })
+})
+
 // SHOW ROUTE (GET => /gear/:id)
 app.get("/gear/:id", (req, res) => {
     // get the id from the params
