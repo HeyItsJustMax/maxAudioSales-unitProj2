@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+        <% for (gear of gear) { %>
+
+        <article>
+          <a href="/gear/<%= gear._id %>">
+            <h2>
+              <%= gear.name %> - <%= gear.price %>
+            </h2>
+          </a>
+        </article>
+
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

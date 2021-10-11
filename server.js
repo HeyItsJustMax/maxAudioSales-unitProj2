@@ -170,6 +170,13 @@ app.get("/gear/seed", (req, res) => {
     })
 })
 
+// INDEX ROUTE (GET => /gear)
+app.get("/gear", (req, res) => {
+    Gear.find({}, (err, gear) => {
+        res.render("gear/index.ejs", { gear })
+    })
+})
+
 
 /////////////////////////////////////
 // SERVER LISTENER
