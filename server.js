@@ -94,7 +94,7 @@ app.get("/gear/seed", (req, res) => {
     // array of Max's starter gear
     const startGear = [
         {    
-            name: "0 - Coast",
+            name: "0-Coast",
             maker: "Make Noise",
             type: "Analog Synthesizer",
             price: 425,
@@ -176,6 +176,18 @@ app.get("/gear", (req, res) => {
         res.render("gear/index.ejs", { gear })
     })
 })
+
+// SHOW ROUTE (GET => /gear/:id)
+app.get("/gear/:id", (req, res) => {
+    // get the id from the params
+    const id = req.params.id
+    // find the particular gear from the database
+    Gear.findById(id, (err, gear) => {
+        // render the template with the data from the database
+        res.render("gear/show.ejs", { gear })
+    })
+})
+
 
 
 /////////////////////////////////////
