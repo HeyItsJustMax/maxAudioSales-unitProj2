@@ -25,7 +25,8 @@ const gearSchema = new Schema({
     great: Boolean,
     good: Boolean,
     poor: Boolean,
-    description: String
+    description: String,
+    username: String
 })
 
 // make gear model

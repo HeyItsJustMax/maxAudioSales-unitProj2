@@ -16,6 +16,19 @@ const router = express.Router()
 
 
 /////////////////////////////////////
+// ROUTER MIDDLEWARE
+/////////////////////////////////////
+
+// Authorization Middleware
+router.use((req, res, next) => {
+    if (req.session.logginIn) {
+        next()
+    } else {
+        res.redirect("/user/login")
+    }
+})
+
+/////////////////////////////////////
 // ROUTES
 /////////////////////////////////////
 
@@ -103,7 +116,7 @@ router.get("/seed", (req, res) => {
 
 // INDEX ROUTE (GET => /gear)
 router.get("/", (req, res) => {
-    Gear.find({}, (err, gear) => {
+    Gear.find({username: req.session.username}, (err, gear) => {
         res.render("gear/index.ejs", { gear })
     })
 })
@@ -118,6 +131,8 @@ router.post("/", (req, res) => {
     // check if the new and used property should be true or false
     req.body.new = req.body.new === "on" ? true : false
     req.body.used = req.body.used === "on" ? true : false
+    // add username to req.body to track related user
+    req.body.username = req.session.username
     // create the new gear listing
     Gear.create(req.body, (err, gear) => {
         // redirect the user back to the main fruits page after the listing is created
