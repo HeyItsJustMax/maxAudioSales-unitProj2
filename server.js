@@ -7,6 +7,7 @@ const express = require("express") // import express
 const morgan = require("morgan") // import morgan
 const methodOverride = require("method-override")
 const GearRouter = require("./controllers/gear")
+const UserRouter = require("./controllers/user")
 
 
 
@@ -27,6 +28,7 @@ app.use(methodOverride("_method")) // override for put and delete requests from 
 app.use(express.urlencoded({extended: true})) // parse urlencoded request bodies
 app.use(express.static("public")) // serve files from public statically
 app.use("/gear", GearRouter)
+app.use("/user", UserRouter)
 
 
 

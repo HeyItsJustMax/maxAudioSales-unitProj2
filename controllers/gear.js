@@ -164,6 +164,8 @@ router.delete("/:id", (req, res) => {
 // SHOW ROUTE (GET => /gear/:id)
 router.get("/:id", (req, res) => {
     // get the id from the params
+    console.log(req.params.id)
+    // console.log(gear)
     const id = req.params.id
     // find the particular gear from the database
     Gear.findById(id, (err, gear) => {
