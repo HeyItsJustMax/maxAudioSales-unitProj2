@@ -193,6 +193,31 @@ app.post("/gear", (req, res) => {
     })
 })
 
+// EDIT ROUTE (GET => /gear/:id/edit)
+app.get("/gear/:id/edit", (req, res) => {
+    // get the id from params
+    const id = req.params.id
+    // get the gear from the database
+    Gear.findById(id, (err, gear) => {
+        // render template and send it gear
+        res.render("gear/edit.ejs", { gear })
+    })
+})
+
+// UPDATE ROUTE (PUT => /gear/:id)
+app.put("/gear/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id
+    // check if the new and used property should be true or false
+    req.body.new = req.body.new === "on" ? true : false
+    req.body.used = req.body.used === "on" ? true : false
+    // update the gear
+    Gear.findByIdAndUpdate(id, req.body, {new: true}, (err, gear) => {
+        // redirect user back to main page when gear
+        res.redirect("/gear")
+    })
+})
+
 // SHOW ROUTE (GET => /gear/:id)
 app.get("/gear/:id", (req, res) => {
     // get the id from the params

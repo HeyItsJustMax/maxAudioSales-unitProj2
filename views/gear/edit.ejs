@@ -6,13 +6,14 @@
     <%- include("../partials/header.ejs") %>
     <main>
       <div>
-        <form action="/gear" method="post">
+        <form action="/gear/<%= gear._id %>?_method=PUT" method="post">
           <fieldset>
-              <legend>ADD NEW GEAR</legend>
+              <legend>EDIT <%= gear.name %></legend>
             <label>
               Name:<input
                 type="text"
                 name="name"
+                value="<%= gear.name %>"
                 placeholder="enter model name"
               />
             </label>
@@ -20,6 +21,7 @@
               Maker:<input
                 type="text"
                 name="maker"
+                value="<%= gear.maker %>"
                 placeholder="enter maker name"
               />
             </label>
@@ -28,6 +30,7 @@
               Type:<input
                 type="text"
                 name="type"
+                value="<%= gear.type %>"
                 placeholder="enter gear type"
               />
             </label>
@@ -35,6 +38,7 @@
               Price:<input
                 type="number"
                 name="price"
+                value="<%= gear.price %>"
                 placeholder="enter gear price"
               />
             </label>
@@ -42,17 +46,18 @@
               Description:<input
                 type="text"
                 name="description"
+                value="<%= gear.description %>"
                 placeholder="enter description of gear"
               />
             </label>
-              NEW: <input type="checkbox" name="new" />
+              NEW: <input type="checkbox" name="new" <%= gear.new ? "checked" : "" %> />
             </label>
           </fieldset>
           <label>
-            USED: <input type="checkbox" name="used" />
+            USED: <input type="checkbox" name="used" <%= gear.used ? "checked" : "" %> />
           </label>
         </fieldset>
-          <input type="submit" value="create new listing" />
+          <input type="submit" value="Update <%= gear.name %>" />
         </form>
       </div>
     </main>
