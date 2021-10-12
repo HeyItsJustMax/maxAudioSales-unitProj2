@@ -218,6 +218,17 @@ app.put("/gear/:id", (req, res) => {
     })
 })
 
+// DESTROY ROUTE (DELETE => /gear/:id)
+app.delete("/gear/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id
+    // delete the gear
+    Gear.findByIdAndRemove(id, (err, gear) => {
+        // redirect user back to index page
+        res.redirect("/gear")
+    })
+})
+
 // SHOW ROUTE (GET => /gear/:id)
 app.get("/gear/:id", (req, res) => {
     // get the id from the params
