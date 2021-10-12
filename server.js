@@ -184,8 +184,9 @@ app.get("/gear/new", (req, res) => {
 
 // CREATE ROUTE (POST => /fruits)
 app.post("/gear", (req, res) => {
-    // check if the 
-
+    // check if the new and used property should be true or false
+    req.body.new = req.body.new === "on" ? true : false
+    req.body.used = req.body.used === "on" ? true : false
     // create the new gear listing
     Gear.create(req.body, (err, gear) => {
         // redirect the user back to the main fruits page after the listing is created
