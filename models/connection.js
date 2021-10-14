@@ -19,6 +19,7 @@ const CONFIG = {
 }
 
 // Establish Connection
+console.log(DATABASE_URL)
 mongoose.connect(DATABASE_URL, CONFIG)
 
 // Events for when connection opens/disconnects/errors

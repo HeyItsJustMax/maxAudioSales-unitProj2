@@ -20,31 +20,6 @@ const MongoStore = require("connect-mongo")
 
 const app = express()
 
-////////////////////////////////////
-//
-////////////////////////////////////
-
-const db = mongoose.connection
-
-
-
-////////////////////////////////////
-// DATABASE
-////////////////////////////////////
-
-// How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI
-
-// Connect to Mongo &
-// Fix Depreciation Warnings from Mongoose
-// May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true })
-
-// Error / Success
-db.on("error", (err) => console.log(err.message + " is mongod not running?"))
-db.on("connected", () => console.log("mongod connected: ", MONGODB_URI))
-db.on("disconnected", () => console.log("mongod disconnected"))
-
 
 
 /////////////////////////////////////
@@ -82,4 +57,5 @@ app.get("/", (req, res) => {
 /////////////////////////////////////
 
 const PORT = process.env.PORT
+
 app.listen(PORT, () => console.log(`Now listening on port ${PORT}`))
