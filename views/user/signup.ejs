@@ -3,16 +3,16 @@
 
 <%- include("../partials/head.ejs") %>
 
+
 <body>
     <%- include("../partials/header.ejs") %>
     
-    <main>
+    <main id="userpage">
 
         <div>
             <form action="/user/signup" method="post">
-            <fieldset>
+            <fieldset id="signup">
                 <legend>New User</legend>
-
                 <label>Username: <input 
                     type="text"
                     name="username"
@@ -25,12 +25,9 @@
                     ></label>
                 <input type="submit" value="Create Account">
             </fieldset>
-
             </form>
-
         </div>
     </main>
-
 
 </body>
 </html>

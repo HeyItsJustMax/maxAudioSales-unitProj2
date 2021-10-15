@@ -7,31 +7,41 @@
     <%- include("../partials/header.ejs") %>
     
     <main>
-
-        <div>
-            <form action="/user/login" method="post">
-            <fieldset>
-                <legend>Login</legend>
-
-                <label>Username: <input 
-                    type="text" 
-                    name="username" 
-                    required
-                    ></label>
-                <label>Password: <input 
-                    type="password" 
-                    name="password" 
-                    required
-                    > </label>
-
-                <input type="submit" value="Login">
-            </fieldset>
-            
-            </form>
-
+        <!-- ============= CONTAINER ============== -->
+        <div class ="container">
+            <!-- sidebar -->
+            <div class="sidebar"></div>
+            <!-- registration container -->
+            <div class="registration">
+                <h2 id="loginh2">LOGIN PAGE</h2>
+                <!-- start form -->
+                <form action="/user/login" method="post">
+                    <!-- fieldset for account signup -->
+                    <fieldset id="signup">
+                        <!-- legend for account login -->
+                        <legend></legend>
+                        <!-- username -->
+                        <label for="username">USERNAME: </label>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            placeholder="Type Username Here..."
+                            required
+                            />
+                        <!-- password -->
+                        <label>PASSWORD: </label>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            placeholder="Type Password Here"
+                            required
+                            /> 
+                        <!-- login button -->
+                        <input type="submit" value="Login">
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </main>
-
-
 </body>
 </html>

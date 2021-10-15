@@ -13,7 +13,7 @@
           <h4><%= gear.type %></h4>
           <h5><%= gear.description %></h5>
           <a href="/gear/<%= gear._id %>/edit"><button>Edit</button></a>
-          <form action="/gear/<%= gear._id %>?_method=DELETE" method="POST">
+          <form id ="delete" action="/gear/<%= gear._id %>?_method=DELETE" method="POST">
             <input type="submit" value="Delete"/>
           </form>
           <a href="/gear/"><button>Back to Main</button></a>
