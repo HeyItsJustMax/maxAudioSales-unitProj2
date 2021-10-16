@@ -1,4 +1,5 @@
-# maxAudioSales-unitProj2
+# Max Audio Sales
+An attempt to recreate the website Reverb.com which is essentially Ebay for audio gear/equipment. Users must signup, then login to see their index page where they can list items for sale. 
 
 
 # Screenshots:
