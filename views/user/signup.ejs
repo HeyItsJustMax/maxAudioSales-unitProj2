@@ -8,26 +8,41 @@
     <%- include("../partials/header.ejs") %>
     
     <main id="userpage">
-
-        <div>
-            <form action="/user/signup" method="post">
-            <fieldset id="signup">
-                <legend>New User</legend>
-                <label>Username: <input 
-                    type="text"
-                    name="username"
-                    required
-                    ></label>
-                <label>Password: <input 
-                    type="password"
-                    name="password"
-                    required
-                    ></label>
-                <input type="submit" value="Create Account">
-            </fieldset>
-            </form>
+        <!-- ============= CONTAINER ============== -->
+        <div class="container">
+            <!-- sidebar -->
+            <div class="sidebar"></div>
+             <!-- registration container -->
+            <div class="registration">
+                <h2 id="signuph2">SIGNUP PAGE</h2>
+                <!-- start form -->
+                <form action="/user/signup" method="post">
+                    <!-- fieldset for account signup -->
+                    <fieldset id="signup">
+                        <!-- legend for account login -->
+                        <legend></legend>
+                        <!-- username -->
+                        <label for="username">USERNAME: </label> 
+                        <input  
+                            type="text"
+                            name="username"
+                            placeholder="Type New Username Here..."
+                            required
+                            />
+                        <!-- password -->
+                        <label>PASSWORD: </label>
+                        <input 
+                            type="password"
+                            name="password"
+                            placeholder="Type Password Here..."
+                            required
+                            />
+                        <!-- signup button -->
+                        <input type="submit" value="Create Account">
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </main>
-
 </body>
 </html>

@@ -5,10 +5,9 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <div>
-
+      <div class="showdiv">
         <article>
-          <h2><%= gear.name %>, by <%= gear.maker %></h2>
+          <h2 class="h2yellow"><%= gear.name %>, by <%= gear.maker %></h2>
           <h3>$<%= gear.price %></h3>
           <h4><%= gear.type %></h4>
           <h5><%= gear.description %></h5>
@@ -18,7 +17,6 @@
           </form>
           <a href="/gear/"><button>Back to Main</button></a>
         </article>
-
       </div>
     </main>
   </body>

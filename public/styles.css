@@ -11,6 +11,7 @@
 body {
     background: var(--purple);
     font-family: helvetica;
+    
 }
 
 
@@ -30,7 +31,8 @@ body {
 
 .sidebar {
     width: 50%;
-    background: url('assets/images/MAS\ photo.png');
+    background: url('assets/images/speaker-vector-565717.png');
+    background-position-x: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
@@ -51,14 +53,19 @@ body {
 h1 {
     text-align: center;
     padding: 40px 0px 0px 0px;
+
 }
 
 h2 {
     font-family: 'Oswald';
     font-weight: 500;
-    color: var(--yellow-white);
-    border-bottom: 2px solid var(--purple);
+    color: var(--purple);
+    border-bottom: 2px solid var(--yellow-white);
     text-align: center;
+}
+
+.h2yellow {
+    color:rgb(247, 242, 103)
 }
 
 
@@ -82,7 +89,7 @@ legend {
 label {
     font-family: 'Oswald';
     font-weight: 200;
-    color: var(--purple);
+    color: var(--yellow-white);
     display: block;
 }
 
@@ -122,3 +129,7 @@ input[type="submit"] {
     resize: none;
     height: 75px;
   }
+
+.showdiv {
+    color:rgb(247, 242, 103)
+}
